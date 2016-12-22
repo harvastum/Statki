@@ -1,0 +1,13 @@
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\MainWindow.g.cs
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\App.g.cs
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\MainWindow.baml
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\Okręty.csproj.GenerateResource.Cache
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\Okręty.csprojResolveAssemblyReference.cache
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\bin\Debug\Okręty.exe.config
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\bin\Debug\Okręty.exe
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\bin\Debug\Okręty.pdb
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\Okręty_MarkupCompile.cache
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\Okręty.g.resources
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\Okręty.Properties.Resources.resources
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\Okręty.exe
+F:\Users\Kacper\Source\Repos\hello-world\WpfApplication3\WpfApplication3\obj\Debug\Okręty.pdb

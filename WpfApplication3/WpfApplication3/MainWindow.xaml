@@ -1,0 +1,40 @@
+﻿<Window x:Name="Window" x:Class="Okręty.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="528.666" Width="892.408" Visibility="Visible" WindowStyle="ThreeDBorderWindow">
+    <Grid>
+        <Grid x:Name="TheGrid" Margin="435,33,49,65" Cursor="Cross">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <TextBlock x:Name="info" HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="90" Width="365" FontSize="36"/>
+        <TextBlock x:Name="Licznik" HorizontalAlignment="Left" Margin="10,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="266" FontSize="18"/>
+        <TextBlock x:Name="remaining" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" Text="Statki do zestrzelenia: 20" VerticalAlignment="Top" Height="42" Width="187" FontSize="16"/>
+    </Grid>
+</Window>
