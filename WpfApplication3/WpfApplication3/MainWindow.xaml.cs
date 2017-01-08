@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using NUnit.Framework.Constraints;
 
 /// <summary>
 ///  
-/// 
+/// derp
 /// 
 /// </summary>
 namespace Okręty
@@ -15,6 +17,7 @@ namespace Okręty
     
     public partial class MainWindow : Window
     {
+        
         private int naboje=0;
         private Button[,] siatka;
         private Flota flota;
@@ -35,13 +38,19 @@ namespace Okręty
                     Grid.SetColumn(siatka[i,j], i);
                     Grid.SetRow(siatka[i,j], j);
                     TheGrid.Children.Add(siatka[i,j]);
-
                    
                     siatka[i, j].Name = "q" + i.ToString() + j.ToString();
                      siatka[i,j].Background= Przezroczyste();
-                    
-                    siatka[i,j].BorderBrush= Brushes.Black;
+
+
+                    siatka[i, j].Style = new Style();
+                    siatka[i, j].Style.Seal();
+
+
+
                     siatka[i,j].Click += AllButtons_Click;
+                    siatka[i, j].MouseEnter += ShowCurrentBrush;
+                   // siatka[i, j].BorderBrush.Opacity = 0.5;
                 }
             }
             Window.Background = Back();
@@ -50,6 +59,14 @@ namespace Okręty
 
 
         }
+
+        private void ShowCurrentBrush(object sender, MouseEventArgs e)
+        {
+            Button b = (Button) sender;
+          //  b.Foreground=
+          
+        }
+
         private void AllButtons_Click(object sender, RoutedEventArgs e)
         {
             Button b = (Button) sender;
@@ -72,6 +89,7 @@ namespace Okręty
         }
 
 
+        #region OBRAZKI
 
         public ImageBrush Przezroczyste()
         {
@@ -81,6 +99,8 @@ namespace Okręty
             };
             return mojBrush;
         }
+
+
         public ImageBrush Statek()
         {
             ImageBrush mojBrush = new ImageBrush
@@ -106,6 +126,7 @@ namespace Okręty
             return mojBrush;
         }
 
+        #endregion
 
 
     }

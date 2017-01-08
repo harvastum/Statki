@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="528.666" Width="892.408" Visibility="Visible" WindowStyle="ThreeDBorderWindow">
     <Grid>
-        <Grid x:Name="TheGrid" Margin="435,33,49,65" Cursor="Cross">
+        <Grid x:Name="TheGrid" Margin="435,33,49,65" Cursor="Cross" d:IsLocked="True" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>

@@ -23,3 +23,16 @@ F:\Users\Kacper\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\
 F:\Users\Kacper\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.g.resources
 F:\Users\Kacper\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.Properties.Resources.resources
 F:\Users\Kacper\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.csproj.GenerateResource.Cache
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\bin\Release\Okręty.exe.config
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.exe
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.pdb
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\bin\Release\Okręty.exe
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\bin\Release\Okręty.pdb
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.csprojResolveAssemblyReference.cache
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\MainWindow.baml
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\MainWindow.g.cs
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\App.g.cs
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty_MarkupCompile.cache
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.g.resources
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.Properties.Resources.resources
+C:\Users\Harvastum\Source\Repos\Statki\WpfApplication3\WpfApplication3\obj\Release\Okręty.csproj.GenerateResource.Cache

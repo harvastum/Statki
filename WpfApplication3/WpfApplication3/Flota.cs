@@ -10,44 +10,61 @@ namespace Okręty
         private int hp ;
         private MainWindow okno;
         private static int n = 10;
-        //Statek[] statki= new Statek [10];   Ta klasa jednak się nie przydała.
+        Statek[] statki= new Statek [10];
         public bool[,] jużstrzelano =new bool[10,10] ;
 
         private Random los = new Random();
-        public bool[,]Occupied = new bool[n,n];
+        
 
 
 
         public Flota(MainWindow okno)
         {
-            beginning:
-
-            protector = 0;
-            hp=20;
+            hp = 20;
             this.okno = okno;
-                int nowy,x,y,offset;  
-                bool vert;
+            statki[9]=new Statek(4);
 
-            for (int i = 0; i < n; i++)
+
+             for (int i = 7; i < 9; i++) statki[i] = new Statek(3);
+
+             for (int i = 4; i < 7; i++) statki[i] = new Statek(2);
+
+             for (int i = 0; i < 4; i++) statki[i]=new Statek(1); 
+
+
+            /*
+           // beginning:
+for (int i = 0; i < n; i++)
                 {
                     for (int j = 0; j < n; j++)
                     {
-                        Occupied[i, j] = false;
+                        Statek.Occupied[i, j] = false;
                         jużstrzelano[i, j] = false;
                     }
                 }
+
+
+            protector = 0;
+            hp=20;
+
+            this.okno = okno;
+                int coords,x,y,offset;  
+
+                bool vert;
+
+            
                   //Duży statek
            do
             {
 
 
-                vert = (los.Next() % 2 == 1);
-                offset = (vert) ? 1 : 10;
+                
+                
                 x = los.Next(7);
                 y = los.Next(7);
-                nowy = 10 * x + y;
-                if (protector>5000) goto beginning;
-            } while (CheckAvailability(nowy)|| CheckAvailability(nowy+offset) || CheckAvailability(nowy+2*offset) || CheckAvailability(nowy+3*offset));
+                coords = 10 * x + y;
+              //  if (protector>5000) goto beginning;
+            } while (CheckAvailability(coords)|| CheckAvailability(coords+offset) || CheckAvailability(coords+2*offset) || CheckAvailability(coords+3*offset));
             DodajStatek(x, y, 4, vert);
             //statki[9] = new Statek(nowy / 10, nowy % 10, 1, vert); 
 
@@ -63,10 +80,10 @@ namespace Okręty
                                 offset = (vert) ? 1 : 10;
                                 x = los.Next(8);
                                 y = los.Next(8);
-                                nowy = 10 * x + y;
+                                coords = 10 * x + y;
                                  //Że niby to był zły pomysł? https://imgs.xkcd.com/comics/goto.png
-                                  if (protector > 5000) goto beginning;
-                            } while (CheckAvailability(nowy) || CheckAvailability(nowy + offset) || CheckAvailability(nowy + 2 * offset));
+                               //   if (protector > 5000) goto beginning;
+                            } while (CheckAvailability(coords) || CheckAvailability(coords + offset) || CheckAvailability(coords + 2 * offset));
 
                             DodajStatek(x, y, 3, vert);
                             //statki[i] = new Statek(nowy / 10, nowy % 10, 1, vert);
@@ -86,9 +103,9 @@ namespace Okręty
                                 offset = (vert) ? 1 : 10;
                                 x = los.Next(9);
                                 y = los.Next(9);
-                                nowy = 10 * x + y;
+                                coords = 10 * x + y;
 
-                            } while (CheckAvailability(nowy)|| CheckAvailability(nowy + offset));
+                            } while (CheckAvailability(coords)|| CheckAvailability(coords + offset));
                            // statki[i] = new Statek(nowy / 10, nowy % 10, 2, vert);
                             DodajStatek(x, y,2,vert);
 
@@ -108,9 +125,9 @@ namespace Okręty
                         vert = (los.Next()%2 == 1);
                         x = los.Next(10);
                         y = los.Next(10);
-                        nowy = 10*x + y;
+                        coords = 10*x + y;
 
-                    } while (CheckAvailability(nowy));
+                    } while (CheckAvailability(coords));
                 //Znaleźliśmy wolne miejsce, teraz je zajmijmy
                 //  statki[i] = new Statek(nowy/10,nowy%10, 1,vert);
                 DodajStatek(x, y, 1, vert);
@@ -121,7 +138,7 @@ namespace Okręty
            
 
 
-
+    */
         }
 
 
@@ -145,7 +162,7 @@ namespace Okręty
         {
             try
             {
-                return (Occupied[coord/10, coord%10]);
+                return (Statek.Occupied[coord/10, coord%10]);
 
             }
             catch (IndexOutOfRangeException)
@@ -157,53 +174,13 @@ namespace Okręty
             return false;
         }
 
-        //Odkryłem, że w C# switch nie może być konstruowany tak jak w c++, co bardzo mnie zawiodło.
-        //
-        private void DodajStatek(int x, int y, int length, bool vert)
-        {
-            Occupied[x, y] = true;
-            if (vert)
-            {
-                switch (length)
-                {
-                    case 1:
-                        break;
-                    case 2:
-                        Occupied[x, y + 1] = true;
-                        goto case 1;
-                    case 3:
-                        Occupied[x, y + 2] = true;
-                        goto case 2;
-                    case 4:
-                        Occupied[x, y + 3] = true;
-                        goto case 3;
-                }
-            }
-            else
-            {
-                switch (length)
-                {
-                    case 1:
-                        break;
-                    case 2:
-                        Occupied[x + 1,y ] = true;
-                        goto case 1;
-                    case 3:
-                        Occupied[x+ 2, y]  = true;
-                        goto case 2;
-                    case 4:
-                        Occupied[x+ 3, y ] = true;
-                        goto case 3;
-                }
-            }
-
-        }
-
+        
+        
         public void Check(int x, int y, Button b)
         {
             
 
-            if (Occupied[x, y])
+            if (Statek.Occupied[x, y])
             {
                 
                 okno.info.Text = "Trafiony!";
@@ -230,7 +207,47 @@ namespace Okręty
                 
             }
 
-    }
+         }      
+        //private void DodajStatek(int x, int y, int length, bool vert)
+        //{
+        //    Occupied[x, y] = true;
+        //    if (vert)
+        //    {
+        //        switch (length)
+        //        {
+        //            case 1:
+        //                break;
+        //            case 2:
+        //                Occupied[x, y + 1] = true;
+        //                goto case 1;
+        //            case 3:
+        //                Occupied[x, y + 2] = true;
+        //                goto case 2;
+        //            case 4:
+        //                Occupied[x, y + 3] = true;
+        //                goto case 3;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        switch (length)
+        //        {
+        //            case 1:
+        //                break;
+        //            case 2:
+        //                Occupied[x + 1,y ] = true;
+        //                goto case 1;
+        //            case 3:
+        //                Occupied[x+ 2, y]  = true;
+        //                goto case 2;
+        //            case 4:
+        //                Occupied[x+ 3, y ] = true;
+        //                goto case 3;
+        //        }
+        //    }
+
+        //}
+
 
 
     }
