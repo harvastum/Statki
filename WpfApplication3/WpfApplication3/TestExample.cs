@@ -15,10 +15,11 @@ namespace Okręty
         [Test]
         public void HelloTest()
         {
-            var rect = new Rectangle(4,4,3,1);
-            var rect2 = new Rectangle(7, 2, 1, 2);
+            var rect = new Rectangle(2,2,2,2);
+            var rect2 = new Rectangle(5, 4, 6, 6);
+            
 
-            var result = Rectangle.Intersect(rect, rect2);
+            Assert.IsTrue(Rectangle.Intersect(rect, rect2).IsEmpty);
         }
     }
     

@@ -9,7 +9,8 @@ using NUnit.Framework.Constraints;
 
 /// <summary>
 ///  
-/// derp
+/// Codebehind for the main window.
+/// Creates buttons, functions responsible for changing images are located here as well.
 /// 
 /// </summary>
 namespace Okręty
@@ -29,7 +30,7 @@ namespace Okręty
             siatka=new Button[10,10];
             
 
-            //Dynamiczne dodawanie guzików, a nie jakieś xamle!
+            //Dynamic buttons assigning.
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
@@ -40,7 +41,7 @@ namespace Okręty
                     TheGrid.Children.Add(siatka[i,j]);
                    
                     siatka[i, j].Name = "q" + i.ToString() + j.ToString();
-                     siatka[i,j].Background= Przezroczyste();
+                    siatka[i,j].Background= Transparent();
 
 
                     siatka[i, j].Style = new Style();
@@ -49,8 +50,6 @@ namespace Okręty
 
 
                     siatka[i,j].Click += AllButtons_Click;
-                    siatka[i, j].MouseEnter += ShowCurrentBrush;
-                   // siatka[i, j].BorderBrush.Opacity = 0.5;
                 }
             }
             Window.Background = Back();
@@ -60,12 +59,7 @@ namespace Okręty
 
         }
 
-        private void ShowCurrentBrush(object sender, MouseEventArgs e)
-        {
-            Button b = (Button) sender;
-          //  b.Foreground=
-          
-        }
+
 
         private void AllButtons_Click(object sender, RoutedEventArgs e)
         {
@@ -73,12 +67,12 @@ namespace Okręty
             int x = Grid.GetColumn(b);
             int y = Grid.GetRow(b);
 
-            if (flota.jużstrzelano[x, y])
+            if (flota.Jużstrzelano[x, y])
             {
                 info.Text = "Tutaj już strzelałeś!!!";
                 return;
             }
-            flota.jużstrzelano[x, y] = true;
+            flota.Jużstrzelano[x, y] = true;
 
             
 
@@ -91,39 +85,39 @@ namespace Okręty
 
         #region OBRAZKI
 
-        public ImageBrush Przezroczyste()
+        public ImageBrush Transparent()
         {
-            ImageBrush mojBrush = new ImageBrush
+            ImageBrush newBrush = new ImageBrush
             {
                 ImageSource = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "\\Images\\przez.jpg"))
             };
-            return mojBrush;
+            return newBrush;
         }
 
 
-        public ImageBrush Statek()
+        public ImageBrush ShipImage()
         {
-            ImageBrush mojBrush = new ImageBrush
+            ImageBrush newBrush = new ImageBrush
             {
                 ImageSource = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "\\Images\\5.png"))
             };
-            return mojBrush;
+            return newBrush;
         }
         public ImageBrush Back()
         {
-            ImageBrush mojBrush = new ImageBrush
+            ImageBrush newBrush = new ImageBrush
             {
                 ImageSource = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "\\Images\\1.jpg"))
             };
-            return mojBrush;
+            return newBrush;
         }
         public ImageBrush Splash()
         {
-            ImageBrush mojBrush = new ImageBrush
+            ImageBrush newBrush = new ImageBrush
             {
                 ImageSource = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "\\Images\\Przechwytywanie.png"))
             };
-            return mojBrush;
+            return newBrush;
         }
 
         #endregion

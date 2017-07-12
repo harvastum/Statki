@@ -1,26 +1,16 @@
 ﻿using System;
-using System.Linq.Expressions;
-using System.Windows.Documents;
-using System.Windows.Media.Animation;
 
 namespace Okręty
 {
-    /// <summary>
-    /// Wychodzi na to, że jednak do niczego się nie przydała ta klasa.
-    /// Wszystko zrobiłem w ramach floty.
-    /// Obiektowość to nie jest moja mocna strona :L
-    /// </summary>
     class Statek
     {
         private static readonly int n = 10;
 
-       
-
+        
 
         public static bool [,]Occupied=new bool [n,n];
         public static bool[,] Jużstrzelano = new bool[10, 10];
-
-        private int hp;
+        
 
         private Random los = new Random();
        
@@ -32,7 +22,6 @@ namespace Okręty
 
         public Statek(int length)
         {   
-            hp = length;
 
             bool vert = los.Next() % 2 == 1;
             int coords, x, y, offset = (vert) ? 1 : 10;
@@ -86,7 +75,7 @@ namespace Okręty
                     } while (CheckAvailability(coords) || CheckAvailability(coords + offset) || CheckAvailability(coords + 2 * offset) || CheckAvailability(coords + 3 * offset));
                     
                     break;
-                default:        //Niepotrzebne, zrobiłem, żeby VS dał mi spokój.
+                default:        //Only done to get rid of VS notifications, needless besides that.
                     x = 1;
                     y = 1;
                     break;
@@ -100,12 +89,7 @@ namespace Okręty
 
 
 
-        ~Statek()
-        {
-            
-
-
-        }
+      
 
         private bool CheckAvailability(int coords)
         {
